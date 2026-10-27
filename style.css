@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1db954;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #b3b3b3;
+  font-size: 1rem;
+}
+
+/* Pestañas de Navegación */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: #242424;
+  color: #b3b3b3;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background-color: #1db954;
+  color: #000;
+  border-color: #1db954;
+}
+
+/* Buscador */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid #333;
+  background-color: #242424;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #1db954;
+}
+
+.search-box button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background-color: #1db954;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.search-box button:hover {
+  background-color: #1ed760;
+  transform: scale(1.03);
+}
+
+/* Spinner de carga */
+.loader {
+  width: 45px;
+  height: 45px;
+  border: 5px solid #242424;
+  border-top: 5px solid #1db954;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estado o mensajes */
+.status {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+/* Rejilla de tarjetas */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta individual */
+.card {
+  background-color: #181818;
+  padding: 16px;
+  border-radius: 10px;
+  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  background-color: #282828;
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* Botón de favorito ❤️ */
+.fav-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  margin-bottom: 12px;
+}
+
+.card audio {
+  width: 100%;
+  height: 35px;
+  margin-top: auto;
+  border-radius: 20px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundPulse - Buscador de Música</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎵 SoundPulse</h1>
+      <p>Descubre y escucha fragmentos de tus artistas favoritos</p>
+    </header>
+
+    <!-- NAVEGACIÓN ENTRE SECCIONES -->
+    <nav class="nav-tabs">
+      <button id="tabSearch" class="tab-btn active">🔎 Buscador</button>
+      <button id="tabFavs" class="tab-btn">❤️ Mis Favoritos (<span id="favCount">0</span>)</button>
+    </nav>
+
+    <!-- CAJA DE BÚSQUEDA -->
+    <div class="search-box" id="searchContainer">
+      <input type="text" id="searchInput" placeholder="Escribe un artista o canción (ej. Sabrina Carpenter)...">
+      <button id="searchBtn">Buscar</button>
+    </div>
+
+    <!-- SPINNER DE CARGA -->
+    <div id="loader" class="loader hidden"></div>
+
+    <!-- MENSAJE DE ESTADO -->
+    <p class="status" id="statusMessage">Escribe algo para comenzar a explorar música.</p>
+
+    <!-- REJILLA DE RESULTADOS -->
+    <main class="results-grid" id="resultsGrid"></main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
